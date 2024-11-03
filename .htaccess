@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /photographer-mission/
+
+# Handle requests to album
+RewriteRule ^album/([0-9]+)/user/([0-9]+)/([a-zA-Z0-9]+)$ album.php?album_id=$1&user_id=$2&token=$3 [L,QSA]
+
+# Handle requests to remote (if applicable)
+RewriteRule ^remote/([0-9]+)/([a-zA-Z0-9]+)$ remote.php?device_id=$1&token=$2 [L,QSA]
+
+# Add this rule for long-term albums if needed
+RewriteRule ^longterm/([0-9]+)/([a-zA-Z0-9]+)$ remote.php?device_id=$1&token=$2 [L,QSA]
