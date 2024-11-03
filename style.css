@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+}
+
+body {
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.page-container {
+    display: flex;
+}
+
+.aside-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.aside-nav-item {
+    margin-bottom: 0 0 10px 0;
+}
+
+.aside-nav-link {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.aside-nav-link {
+    position: relative;
+    display: inline-block;
+}
+
+.aside-nav-link::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    background: #1FAD9F;
+    transition: width .2s;
+}
+
+.aside-nav-link:hover::after {
+    width: 100%;
+}
+
+.aside-nav-link.active::after {
+    width: 100%;
+}
+
+.aside-nav-link i {
+    margin-right: 10px;
+}
+
+.image-item {
+    display: block;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.image-item:hover img {
+    transform: scale(1.05);
+}
+
+.navbar-toggler {
+    color: #000 !important;
+}
+
+#sidebar-wrapper.show + .overlay {
+    display: block;
+}
+
+/* Sidebar */
+#sidebar-wrapper {
+    transition: all 0.3s ease;
+    z-index: 101;
+    width: 90px !important;
+    max-width: 90px !important;
+}
+
+/** MEDIA QUERIES TO MAKE IT COMPATIBLE WITH MOBILE PHONE **/
+
+/** Small/Medium Screens **/
+@media screen and (max-width: 768px) {
+    .navbar-brand {
+        width: 50% !important;
+        color: #000 !important;
+    }
+    #sidebar-wrapper {
+        display: none; /* Hide by default */
+    }
+
+    #sidebar-wrapper.show {
+        display: block; /* Show when 'show' class is added */
+    }
+}
+
+/** End of Small/Medium Screens **/
